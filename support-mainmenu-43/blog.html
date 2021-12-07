@@ -1,0 +1,925 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB" dir="ltr">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://www2.completepicture.co.uk" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Sap Calculations, U-Value Calculator, MCS Microgeneration QMS," />
+    <meta name="author" content="Paul Dennis" />
+    <meta name="description"
+        content="Complete Picture, Sap Calculations, U-Value Calculator, MCS Microgeneration QMS, Project Extranet" />
+    <meta name="generator" content="Joomla! - Open Source Content Management" />
+    <title>
+        Blog
+    </title>
+
+    <link href="/templates/js_impacto/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link href="/plugins/system/jcemediabox/css/jcemediabox.min.css?9d108330040bd2b7386ad9c4cf8105fc" rel="stylesheet"
+        type="text/css" />
+    <link href="/media/system/css/modal.css?2cb05687b1c147e84ad7b39fff7abb72" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/style-red.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/joomla30-red-extended.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/joomla30-red-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/wright/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+
+    <script type="application/json" class="joomla-script-options new">
+        {
+            "csrf.token": "8c2c0c9f3a5381be431f44bc9e4813cd",
+            "system.paths": {
+                "root": "",
+                "base": ""
+            }
+        }
+    </script>
+    <script src="/templates/js_impacto/js/jui/jquery.min.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript">
+    </script>
+    <script src="/media/jui/js/jquery-noconflict.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/jui/js/jquery-migrate.min.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/caption.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/plugins/system/jcemediabox/js/jcemediabox.min.js?df182ff78a8c3234076ac72bcc4e27d1"
+        type="text/javascript"></script>
+    <script src="/templates/js_impacto/js/jui/bootstrap.min.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript">
+    </script>
+    <script src="/media/system/js/mootools-core.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/core.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/mootools-more.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/modal.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/js/lightning.min.js" type="text/javascript"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" type="text/javascript"></script>
+
+
+
+
+
+    <script type="text/javascript">
+        jQuery(window).on('load', function () {
+            new JCaption('img.caption');
+        });
+        jQuery(document).ready(function () {
+            WFMediaBox.init({
+                "base": "\/",
+                "theme": "standard",
+                "mediafallback": 0,
+                "mediaselector": "audio,video",
+                "width": "",
+                "height": "",
+                "lightbox": 0,
+                "shadowbox": 0,
+                "icons": 1,
+                "overlay": 1,
+                "overlay_opacity": 0.8,
+                "overlay_color": "#000000",
+                "transition_speed": 500,
+                "close": 2,
+                "scrolling": "fixed",
+                "labels": {
+                    "close": "Close",
+                    "next": "Next",
+                    "previous": "Previous",
+                    "cancel": "Cancel",
+                    "numbers": "{{numbers}}",
+                    "numbers_count": "{{current}} of {{total}}"
+                }
+            });
+        });
+        jQuery(function ($) {
+            SqueezeBox.initialize({});
+            initSqueezeBox();
+            $(document).on('subform-row-add', initSqueezeBox);
+
+            function initSqueezeBox(event, container) {
+                SqueezeBox.assign($(container || document).find('a.modal').get(), {
+                    parse: 'rel'
+                });
+            }
+        });
+
+        window.jModalClose = function () {
+            SqueezeBox.close();
+        };
+
+        // Add extra modal close functionality for tinyMCE-based editors
+        document.onreadystatechange = function () {
+            if (document.readyState == 'interactive' && typeof tinyMCE != 'undefined' && tinyMCE) {
+                if (typeof window.jModalClose_no_tinyMCE === 'undefined') {
+                    window.jModalClose_no_tinyMCE = typeof (jModalClose) == 'function' ? jModalClose : false;
+
+                    jModalClose = function () {
+                        if (window.jModalClose_no_tinyMCE) window.jModalClose_no_tinyMCE.apply(this, arguments);
+                        tinyMCE.activeEditor.windowManager.close();
+                    };
+                }
+
+                if (typeof window.SqueezeBoxClose_no_tinyMCE === 'undefined') {
+                    if (typeof (SqueezeBox) == 'undefined') SqueezeBox = {};
+                    window.SqueezeBoxClose_no_tinyMCE = typeof (SqueezeBox.close) == 'function' ? SqueezeBox.close :
+                        false;
+
+                    SqueezeBox.close = function () {
+                        if (window.SqueezeBoxClose_no_tinyMCE) window.SqueezeBoxClose_no_tinyMCE.apply(this,
+                            arguments);
+                        tinyMCE.activeEditor.windowManager.close();
+                    };
+                }
+            }
+        };
+
+        jQuery(function ($) {
+            initTooltips();
+            $("body").on("subform-row-add", initTooltips);
+
+            function initTooltips(event, container) {
+                container = container || document;
+                $(container).find(".hasTooltip").tooltip({
+                    "html": true,
+                    "container": "body"
+                });
+            }
+        });
+    </script>
+
+
+
+
+    <meta name="google-site-verification" content="" />
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-18156584-1']);
+        _gaq.push(['_gat._anonymizeIp']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+                '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+<body class="is_firefox v_79  addGradient b_jdefault h_jdefault id_209 rev_3.6.11_3.7.11">
+    <header id="header">
+        <div class="container">
+            <div class="row clearfix">
+                <div id="logo" class="span5"><a href="https://www2.completepicture.co.uk" class="image">
+                        <h2>Complete Picture SAP U-Value MCS Software</h2><img
+                            src="https://www2.completepicture.co.uk/images/logo.png" alt="" title="" />
+                    </a></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper-menu">
+        <div class="container">
+            <nav id="menu">
+                <div class="navbar ">
+                    <div class="navbar-inner">
+                        <a class="btn btn-navbar collapsed" data-toggle="collapse" data-target="#nav-menu">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <div class="nav-collapse" id="nav-menu">
+
+                            
+<ul class="menu nav">
+      
+</ul>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="wrapper-content">
+        <div class="container">
+
+            <div id="main-content" class="row-fluid">
+
+
+                <section class="span9" id="main">
+
+                    <div id="breadcrumbs">
+                        
+                    </div>
+
+                    <div id="system-message-container">
+                    </div>
+
+                    <div class="blog">
+                        
+                        <div class="page-header">
+                            <h1>
+                                Blog
+                            </h1>
+                        </div>
+
+                        <div class="page-header">
+
+                            <h2> </h2>
+
+                        </div>
+
+
+                        <div class="category-desc clearfix">
+                        </div>
+
+                        
+
+                        
+
+                        <div class="items-row cols-2 row-0  row-fluid">
+
+
+
+                            <div class="span6">
+                                <div class="item column-1">
+
+
+                                    <h2>
+                                        EPC Scotland Software Approval
+                                    </h2>
+
+                                    <div class="icons">
+
+
+                                    </div>
+                                    <p>The SAP Calculator version 4 has been certified on the 30/10/13 by the Energy Savings Trust for the lodgement of EPC's to the Scottish register for Energy Performance Certification (EPCs) in Scotland for new Domestic buildings.</p>
+
+                                    
+                                    <p class="readmore"><a class="btn"
+                                            href="support-mainmenu-43/blog/epc-scotland-software-approval.html"> <span
+                                                class="icon-chevron-right"></span>
+
+                                            Read more ...
+                                        </a></p>
+                                    
+
+                                </div><!-- end item-->
+
+
+                            </div><!-- end span -->
+
+
+                            
+                        
+
+                        
+                            <div class="span6">
+                                <div class="item column-2">
+
+
+
+
+                                    <h2>
+                                        Extensions
+                                    </h2>
+
+
+
+
+                                    <div class="icons">
+
+
+                                    </div>
+                                    <p>SAP version 4 has been updated 07/09/12 to include a simplified interface for whole house calculations for large extensions.</p>
+
+                                    
+                                    <p class="readmore"><a class="btn"
+                                            href="support-mainmenu-43/blog/extensions30.html"> <span
+                                                class="icon-chevron-right"></span>
+
+                                            Read more ...
+                                        </a></p>
+                                    
+                                </div><!-- end item -->
+
+
+                            </div><!-- end span -->
+                        </div><!-- end row -->
+
+                        
+                        
+
+                        
+
+                        <div class="items-row cols-2 row-0  row-fluid">
+
+
+
+                            <div class="span6">
+                                <div class="item column-1">
+
+
+                                    <h2>
+                                        Solar Thermal MIS 3001
+                                    </h2>
+
+                                    <div class="icons">
+
+
+                                    </div>
+                                    <p>SAP version 4 has been updated 24/07/12 to include the revised MCS MIS 3001 solar thermal module.</p>
+
+                                    
+                                    <p class="readmore"><a class="btn"
+                                            href="support-mainmenu-43/blog/solar-thermal-mis-300129.html"> <span
+                                                class="icon-chevron-right"></span>
+
+                                            Read more ...
+                                        </a></p>
+                                    
+
+                                </div><!-- end item-->
+
+
+                            </div><!-- end span -->
+
+
+                            
+                        
+
+                        
+                            <div class="span6">
+                                <div class="item column-2">
+
+
+
+
+                                    <h2>
+                                        MIS 3005 Heat Pump Sizing
+                                    </h2>
+
+
+
+
+                                    <div class="icons">
+
+
+                                    </div>
+                                    <p>SAP version 4 has been released 02/04/12 and includes the MCS MIS 3005 heat pump sizing module.</p>
+
+                                    
+                                    <p class="readmore"><a class="btn"
+                                            href="support-mainmenu-43/blog/mis-3005-heat-pump-sizing.html"> <span
+                                                class="icon-chevron-right"></span>
+
+                                            Read more ...
+                                        </a></p>
+                                    
+                                </div><!-- end item -->
+
+
+                            </div><!-- end span -->
+                        </div><!-- end row -->
+
+                        
+                        
+
+                        
+
+                        <div class="items-row cols-2 row-0  row-fluid">
+
+
+
+                            <div class="span6">
+                                <div class="item column-1">
+
+
+                                    <h2>
+                                        Online QMS
+                                    </h2>
+
+                                    <div class="icons">
+
+
+                                    </div>
+                                    <p>Online quality management system launched 14/02/11 to simplify compliance with Microgeneration MCS accreditation schemes.</p>
+
+                                    
+                                    <p class="readmore"><a class="btn"
+                                            href="support-mainmenu-43/blog/online-qms.html"> <span
+                                                class="icon-chevron-right"></span>
+
+                                            Read more ...
+                                        </a></p>
+                                    
+
+                                </div><!-- end item-->
+
+
+                            </div><!-- end span -->
+
+
+                            
+                        
+
+                        
+                            <div class="span6">
+                                <div class="item column-2">
+
+
+
+
+                                    <h2>
+                                        Sap 3.4 MCS Microgeneration
+                                    </h2>
+
+
+
+
+                                    <div class="icons">
+
+
+                                    </div>
+                                    <p>Updated Microgeneration module and tutorials released 30/06/10.&nbsp; Creates site survey forms for on-site data capture. <a href="index.php?option=com_content&amp;view=article&amp;id=63:risk-assessments-and-toolbox-talks&amp;catid=21:quality-management-system">Free risk assessment</a> software bundle.</p>
+
+                                    
+                                    <p class="readmore"><a class="btn"
+                                            href="support-mainmenu-43/blog/sap-34-mcs-microgeneration.html"> <span
+                                                class="icon-chevron-right"></span>
+
+                                            Read more ...
+                                        </a></p>
+                                    
+                                </div><!-- end item -->
+
+
+                            </div><!-- end span -->
+                        </div><!-- end row -->
+
+                        
+                        
+
+                        
+
+                        <div class="items-row cols-2 row-0  row-fluid">
+
+
+
+                            <div class="span6">
+                                <div class="item column-1">
+
+
+                                    <h2>
+                                        Sap 3.4 U-Value Calculator
+                                    </h2>
+
+                                    <div class="icons">
+
+
+                                    </div>
+                                    <p>Sap version 3.4 including U-value Calculator released 14/04/10.  Creates BS and ISO compliant calculations for use with SAP projects</p>
+
+                                    
+                                    <p class="readmore"><a class="btn"
+                                            href="support-mainmenu-43/blog/sap-34-uvalue-calculator.html"> <span
+                                                class="icon-chevron-right"></span>
+
+                                            Read more ...
+                                        </a></p>
+                                    
+
+                                </div><!-- end item-->
+
+
+                            </div><!-- end span -->
+
+
+                            
+                        
+
+                        
+                            <div class="span6">
+                                <div class="item column-2">
+
+
+
+
+                                    <h2>
+                                        Sap 3.3 Approved Scotland
+                                    </h2>
+
+
+
+
+                                    <div class="icons">
+
+
+                                    </div>
+                                    <p>Sap 3. 37 version released 04/03/10. Has been approved by the BRE for use in Scotland.</p>
+
+                                    
+                                    <p class="readmore"><a class="btn"
+                                            href="support-mainmenu-43/blog/sap-337-released.html"> <span
+                                                class="icon-chevron-right"></span>
+
+                                            Read more ...
+                                        </a></p>
+                                    
+                                </div><!-- end item -->
+
+
+                            </div><!-- end span -->
+                        </div><!-- end row -->
+
+                        
+                        
+
+                        
+
+                        <div class="items-row cols-2 row-0  row-fluid">
+
+
+
+                            <div class="span6">
+                                <div class="item column-1">
+
+
+                                    <h2>
+                                        Sap 3.3 released
+                                    </h2>
+
+                                    <div class="icons">
+
+
+                                    </div>
+                                    <p>Sap 3. 3 version released 10/08/09. Improved support for mechanical ventilation and heat recovery, community heat pumps plus user interface productivity enhancements.</p>
+
+                                    
+                                    <p class="readmore"><a class="btn"
+                                            href="support-mainmenu-43/blog/sap-33-released.html"> <span
+                                                class="icon-chevron-right"></span>
+
+                                            Read more ...
+                                        </a></p>
+                                    
+
+                                </div><!-- end item-->
+
+
+                            </div><!-- end span -->
+
+
+                            
+                        
+
+                        
+                            <div class="span6">
+                                <div class="item column-2">
+
+
+
+
+                                    <h2>
+                                        Complete Project Extranet Launched
+                                    </h2>
+
+
+
+
+                                    <div class="icons">
+
+
+                                    </div>
+                                    <p>Complete Picture (02/03/09) have launched <span class="zoom-link">C</span><span class="zoom-link">omplete Project extranet </span>ai<span class="zoom-link"></span>med at small to medium sized projects.</p>
+<p />
+
+                                    
+                                    <p class="readmore"><a class="btn"
+                                            href="support-mainmenu-43/blog/complete-project-extranet-launched.html"> <span
+                                                class="icon-chevron-right"></span>
+
+                                            Read more ...
+                                        </a></p>
+                                    
+                                </div><!-- end item -->
+
+
+                            </div><!-- end span -->
+                        </div><!-- end row -->
+
+                        
+                        
+
+                        
+
+                        <div class="items-row cols-2 row-0  row-fluid">
+
+
+
+                            <div class="span6">
+                                <div class="item column-1">
+
+
+                                    <h2>
+                                        SAP 3.21 released
+                                    </h2>
+
+                                    <div class="icons">
+
+
+                                    </div>
+                                    <div align="left">SAP 3.21 released includes building regulations library. </div>
+                                    
+                                    <p class="readmore"><a class="btn"
+                                            href="support-mainmenu-43/blog/sap-321-released.html"> <span
+                                                class="icon-chevron-right"></span>
+
+                                            Read more ...
+                                        </a></p>
+                                    
+
+                                </div><!-- end item-->
+
+
+                            </div><!-- end span -->
+
+
+                            
+                        
+
+                        
+                            <div class="span6">
+                                <div class="item column-2">
+
+
+
+
+                                    <h2>
+                                        Document Browser
+                                    </h2>
+
+
+
+
+                                    <div class="icons">
+
+
+                                    </div>
+                                    <div align="left"><span class="content">Our innovative Document Browser for the Building Regulations released 29/02/08. Free to Download.</span> </div>
+                                    
+                                    <p class="readmore"><a class="btn"
+                                            href="support-mainmenu-43/blog/document-browser.html"> <span
+                                                class="icon-chevron-right"></span>
+
+                                            Read more ...
+                                        </a></p>
+                                    
+                                </div><!-- end item -->
+
+
+                            </div><!-- end span -->
+                        </div><!-- end row -->
+
+                        
+                        
+
+                        
+
+                        <div class="items-row cols-2 row-0  row-fluid">
+
+
+
+                            <div class="span6">
+                                <div class="item column-1">
+
+
+                                    <h2>
+                                        Energy Assessors
+                                    </h2>
+
+                                    <div class="icons">
+
+
+                                    </div>
+                                    <div align="left">Energy Assessors Accreditation Scheme Approved 01/02/08<br /></div>
+                                    
+                                    <p class="readmore"><a class="btn"
+                                            href="support-mainmenu-43/blog/energy-assessors.html"> <span
+                                                class="icon-chevron-right"></span>
+
+                                            Read more ...
+                                        </a></p>
+                                    
+
+                                </div><!-- end item-->
+
+
+                            </div><!-- end span -->
+
+
+                            
+                        
+
+                        
+                            <div class="span6">
+                                <div class="item column-2">
+
+
+
+
+                                    <h2>
+                                        CDM Designer News
+                                    </h2>
+
+
+
+
+                                    <div class="icons">
+
+
+                                    </div>
+                                    <div class="content" align="left">CDM Designer version 1 released 15/01/08.</div>
+                                    
+                                    <p class="readmore"><a class="btn"
+                                            href="support-mainmenu-43/blog/cdm-designer-news.html"> <span
+                                                class="icon-chevron-right"></span>
+
+                                            Read more ...
+                                        </a></p>
+                                    
+                                </div><!-- end item -->
+
+
+                            </div><!-- end span -->
+                        </div><!-- end row -->
+
+                        
+                        
+
+                        
+
+                        <div class="items-row cols-2 row-0  row-fluid">
+
+
+
+                            <div class="span6">
+                                <div class="item column-1">
+
+
+                                    <h2>
+                                        Sap BRE Approved For Scotland
+                                    </h2>
+
+                                    <div class="icons">
+
+
+                                    </div>
+                                    <div align="left">Sap BRE Approved For Scotland 18/07/07.<br /></div>
+                                    
+                                    <p class="readmore"><a class="btn"
+                                            href="support-mainmenu-43/blog/sap-bre-approved-for-scotland.html"> <span
+                                                class="icon-chevron-right"></span>
+
+                                            Read more ...
+                                        </a></p>
+                                    
+
+                                </div><!-- end item-->
+
+
+                            </div><!-- end span -->
+
+
+                            
+                        
+
+                        
+                            <div class="span6">
+                                <div class="item column-2">
+
+
+
+
+                                    <h2>
+                                        Sap BRE Approved
+                                    </h2>
+
+
+
+
+                                    <div class="icons">
+
+
+                                    </div>
+                                    <div align="left"><span class="content">SAP Calculator Version 3 Approved by the BRE 30/04/07</span></div>
+                                    
+                                    <p class="readmore"><a class="btn"
+                                            href="support-mainmenu-43/blog/sap-bre-approved.html"> <span
+                                                class="icon-chevron-right"></span>
+
+                                            Read more ...
+                                        </a></p>
+                                    
+                                </div><!-- end item -->
+
+
+                            </div><!-- end span -->
+                        </div><!-- end row -->
+
+                        
+                        
+
+                        
+
+                        <div class="items-row cols-2 row-0  row-fluid">
+
+
+
+                            <div class="span6">
+                                <div class="item column-1">
+
+
+                                    <h2>
+                                        Edition 32 Updated
+                                    </h2>
+
+                                    <div class="icons">
+
+
+                                    </div>
+                                    <div><span class="content">Complete Regulations edition 32 published 08/05/07</span><br /></div>
+
+                                    
+                                    <p class="readmore"><a class="btn"
+                                            href="support-mainmenu-43/blog/edition-32-updated.html"> <span
+                                                class="icon-chevron-right"></span>
+
+                                            Read more ...
+                                        </a></p>
+                                    
+
+                                </div><!-- end item-->
+
+
+                            </div><!-- end span -->
+
+
+                            
+                        
+
+
+
+
+
+
+
+
+                    </div>
+
+
+
+
+                </section>
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <div class="module"></div>
+
+    <div class="wrapper-footer clearfix">
+        <footer id="footer" class="footer sticky">
+
+
+            <div class="footer-content">
+                <div class="container">
+
+
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="/templates/js_impacto/js/jquery.innerfade.js"></script>
+    <script type="text/javascript" src="/templates/js_impacto/js/impacto.js"></script>
+
+    <script src='/templates/js_impacto/wright/js/utils.min.js' type='text/javascript'></script>
+    <script src='/templates/js_impacto/wright/js/stickyfooter.min.js' type='text/javascript'></script>
+</body>
+
+</html>

@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB" dir="ltr">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://www2.completepicture.co.uk" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Sap Calculations, U-Value Calculator, MCS Microgeneration QMS," />
+    <meta name="author" content="Paul Dennis" />
+    <meta name="description"
+        content="Complete Picture, Sap Calculations, U-Value Calculator, MCS Microgeneration QMS, Project Extranet" />
+    <meta name="generator" content="Joomla! - Open Source Content Management" />
+    <title>
+        Product News
+    </title>
+
+    <link href="/templates/js_impacto/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link href="/plugins/system/jcemediabox/css/jcemediabox.min.css?9d108330040bd2b7386ad9c4cf8105fc" rel="stylesheet"
+        type="text/css" />
+    <link href="/media/system/css/modal.css?2cb05687b1c147e84ad7b39fff7abb72" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/style-red.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/joomla30-red-extended.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/joomla30-red-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/wright/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+
+    <script type="application/json" class="joomla-script-options new">
+        {
+            "csrf.token": "8c2c0c9f3a5381be431f44bc9e4813cd",
+            "system.paths": {
+                "root": "",
+                "base": ""
+            }
+        }
+    </script>
+    <script src="/templates/js_impacto/js/jui/jquery.min.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript">
+    </script>
+    <script src="/media/jui/js/jquery-noconflict.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/jui/js/jquery-migrate.min.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/caption.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/plugins/system/jcemediabox/js/jcemediabox.min.js?df182ff78a8c3234076ac72bcc4e27d1"
+        type="text/javascript"></script>
+    <script src="/templates/js_impacto/js/jui/bootstrap.min.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript">
+    </script>
+    <script src="/media/system/js/mootools-core.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/core.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/mootools-more.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/modal.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/js/lightning.min.js" type="text/javascript"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" type="text/javascript"></script>
+
+
+
+
+
+    <script type="text/javascript">
+        jQuery(window).on('load', function () {
+            new JCaption('img.caption');
+        });
+        jQuery(document).ready(function () {
+            WFMediaBox.init({
+                "base": "\/",
+                "theme": "standard",
+                "mediafallback": 0,
+                "mediaselector": "audio,video",
+                "width": "",
+                "height": "",
+                "lightbox": 0,
+                "shadowbox": 0,
+                "icons": 1,
+                "overlay": 1,
+                "overlay_opacity": 0.8,
+                "overlay_color": "#000000",
+                "transition_speed": 500,
+                "close": 2,
+                "scrolling": "fixed",
+                "labels": {
+                    "close": "Close",
+                    "next": "Next",
+                    "previous": "Previous",
+                    "cancel": "Cancel",
+                    "numbers": "{{numbers}}",
+                    "numbers_count": "{{current}} of {{total}}"
+                }
+            });
+        });
+        jQuery(function ($) {
+            SqueezeBox.initialize({});
+            initSqueezeBox();
+            $(document).on('subform-row-add', initSqueezeBox);
+
+            function initSqueezeBox(event, container) {
+                SqueezeBox.assign($(container || document).find('a.modal').get(), {
+                    parse: 'rel'
+                });
+            }
+        });
+
+        window.jModalClose = function () {
+            SqueezeBox.close();
+        };
+
+        // Add extra modal close functionality for tinyMCE-based editors
+        document.onreadystatechange = function () {
+            if (document.readyState == 'interactive' && typeof tinyMCE != 'undefined' && tinyMCE) {
+                if (typeof window.jModalClose_no_tinyMCE === 'undefined') {
+                    window.jModalClose_no_tinyMCE = typeof (jModalClose) == 'function' ? jModalClose : false;
+
+                    jModalClose = function () {
+                        if (window.jModalClose_no_tinyMCE) window.jModalClose_no_tinyMCE.apply(this, arguments);
+                        tinyMCE.activeEditor.windowManager.close();
+                    };
+                }
+
+                if (typeof window.SqueezeBoxClose_no_tinyMCE === 'undefined') {
+                    if (typeof (SqueezeBox) == 'undefined') SqueezeBox = {};
+                    window.SqueezeBoxClose_no_tinyMCE = typeof (SqueezeBox.close) == 'function' ? SqueezeBox.close :
+                        false;
+
+                    SqueezeBox.close = function () {
+                        if (window.SqueezeBoxClose_no_tinyMCE) window.SqueezeBoxClose_no_tinyMCE.apply(this,
+                            arguments);
+                        tinyMCE.activeEditor.windowManager.close();
+                    };
+                }
+            }
+        };
+
+        jQuery(function ($) {
+            initTooltips();
+            $("body").on("subform-row-add", initTooltips);
+
+            function initTooltips(event, container) {
+                container = container || document;
+                $(container).find(".hasTooltip").tooltip({
+                    "html": true,
+                    "container": "body"
+                });
+            }
+        });
+    </script>
+
+
+
+
+    <meta name="google-site-verification" content="" />
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-18156584-1']);
+        _gaq.push(['_gat._anonymizeIp']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+                '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+<body class="is_firefox v_79  addGradient b_jdefault h_jdefault id_209 rev_3.6.11_3.7.11">
+    <header id="header">
+        <div class="container">
+            <div class="row clearfix">
+                <div id="logo" class="span5"><a href="https://www2.completepicture.co.uk" class="image">
+                        <h2>Complete Picture SAP U-Value MCS Software</h2><img
+                            src="https://www2.completepicture.co.uk/images/logo.png" alt="" title="" />
+                    </a></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper-menu">
+        <div class="container">
+            <nav id="menu">
+                <div class="navbar ">
+                    <div class="navbar-inner">
+                        <a class="btn btn-navbar collapsed" data-toggle="collapse" data-target="#nav-menu">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <div class="nav-collapse" id="nav-menu">
+
+                            
+<ul class="menu nav">
+      
+</ul>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="wrapper-content">
+        <div class="container">
+
+
+            <div id="main-content" class="row-fluid">
+
+
+
+
+
+                <section class="span9" id="main">
+
+                    <div id="breadcrumbs">
+                    
+                    </div>
+
+                    <div id="system-message-container">
+                    </div>
+                    
+                    
+                    
+
+                    <div class="item-page" itemscope itemtype="http://schema.org/Article">
+                        <!-- Schema.org markup -->
+                        <meta itemprop="name" content="&lt;!--#4DHTML article_o.title--&gt; : Undefined" />
+                        <meta itemprop="headline" content="Solar PV Calculation" />
+                        <meta itemprop="inLanguage" content="en-GB" />
+                        <meta itemprop="genre" content="MCS Sap Calculator" />
+                        <meta itemprop="genre" content="Products" />
+                        <meta itemprop="dateCreated" content="2007-05-10T16:45:51+00:00" />
+                        <meta itemprop="dateModified" content="2013-11-28T15:39:17+00:00" />
+                        <meta itemprop="datePublished" content="2007-05-10T16:45:38+00:00" />
+                        <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                            <meta itemprop="name" content="Complete Picture SAP U-Value MCS Software" />
+                            <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                                <meta itemprop="url" content="https://www.completepicture.co.uk/images/logo.png">
+                            </div>
+                        </div>
+                        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <meta itemprop="name" content="" />
+                        </div>
+
+
+                        <div class="page-header">
+                            <h2>
+                                Management Procedures
+                            </h2>
+
+
+                        </div>
+
+
+
+
+
+
+                        <div itemprop="articleBody">
+                            <h1>1.	Management Procedures</h1>
+<h2>2.	Management Responsibility</h2>
+<h3>2.1. Quality Policy</h3>
+<p>[[ProjectFounder]] is committed to:</p>
+<p>•	Providing customers with high quality products and services which meet requirements and are fit for their purpose.</p>
+<p>•	Operating the business to the systems required by MCS 001 &amp; MIS 3xxx documents.</p>
+<p>•	Enhancing the skills of management and staff through review and actively pursuing an on-going training policy, the objective of which is to prepare staff to perform their work more effectively.</p>
+<p>•	Promoting the culture of continual quality improvements and the philosophy of getting things "right first time".</p>
+<p>•	Rigorously controlling &amp; continuously monitoring the supply, installation (by approved sub contractors) and completion to programme of all projects undertaken.</p>
+<p>•	Promoting the quality management systems and ensuring implementation is achieved by internal auditing, management review, corrective and preventive action.</p>
+<p>•	The quality policy is reviewed at the management review meeting every 12 months</p>
+<h3>2.2. Management Commitment</h3>
+<p>•	The [[ProjectFounder]] has defined and specified requirements within the quality policy and made clear the importance of meeting statutory requirements as well as those specific to the customers.</p>
+<p>•	The Management Representative (as required by MCS 001 &amp; MIS 3xxx) is [[AssignedMember]] who ensures regular management reviews of the quality system are undertaken to ensure that sufficient resources are available and that quality objectives are set in order that continual improvement can be achieved.</p>
+<h3>2.3. Management Representative</h3>
+<p>The [[ProjectFounder]] has designated [[AssignedMember]] to take responsibility for the management system. He will ensure that the processes necessary for the system are established, implemented and maintained. He will report progress and other issues of performance at the management review meeting. The will ensure that he is aware of customer requirements and ensure that they are promoted to all personnel.</p>
+<h3>2.4. Responsibility and Authority</h3>
+<p>Responsibilities are defined in this manual and procedures but in all circumstances personnel will be made aware of their responsibilities for successful completion of the processes by the [[AssignedMember]].</p>
+<p>2.5. Internal Communication</p>
+<p>[[AssignedMember]] will ensure that all personnel are made aware of factors impacting on the quality management systems.</p>
+<h3>2.6. Customer Focus</h3>
+<p>[[ProjectFounder]] is committed to ensuring that they are fully aware of client's requirements and that improving its quality management systems is a means of enhancing customer satisfaction..</p>
+<p>2.7. Implementation and Maintenance</p>
+<p>•	The quality manual will be reviewed at regular intervals where the completeness and effectiveness of the system and any steps necessary to improve it are discussed and actioned.</p>
+<p>•	Whenever the quality manual is changed [[AssignedMember]] will make all relevant personnel aware of the new or revised systems and monitor them to ensure that they are implemented effectively.</p>
+<h3>2.8. Planning</h3>
+<p>•	The [[ProjectFounder]] sets out quality objectives in line with the quality policy at the management review meeting and appoints actions, looks for measures of success and reviews progress.</p>
+<p>•	The [[ProjectFounder]] is instrumental in the development and operation of the systems and ensures that the systems are used to meet customer needs.</p>
+<p>•	All personnel will be made aware of systems changes once they have been approved and review of operations will be undertaken to ensure that all new processes are effective.</p>
+<h2>3.	Resources</h2>
+<p>The resources necessary to undertake the works required by customers are mainly from the in-house personnel but additional outsourced contracts will be placed as required to meet customer needs.</p>
+<h3>3.1. Human Resources</h3>
+<p>•	The training, competence and experience of all personnel are reviewed to ensure that they are able to meet the contract requirements for general and specific tasks associated with the work. Hardcopies of training certificates are scanned and uploaded to Office\Files\Training.</p>
+<p>•	The ensures that only personnel with the suitable qualification and experience are employed on work tasks. He will take action to ensure that training requirements are met and that the effectiveness of training to meet requirements is monitored. All personnel are appraised with respect to competence.</p>
+<p>•	The will keep personnel fully aware of the importance of having the necessary training and experience and how they can work effectively to meet quality objectives.</p>
+<p>•	It is ensured that records of training, education, qualification and experience are maintained.</p>
+<h3>3.2. Infrastructure</h3>
+<p>The infrastructure necessary to manage the business is</p>
+<h3>3.3. Work Environment</h3>
+<p>The environmental conditions being worked will be inspected to ensure that work is only undertaken when appropriate conditions exist. These include being suitable to meet the quality, safety, health and environmental requirements.</p>
+<h2>4.	Management Review</h2>
+<p>Management review meetings are undertaken as required (minimum every 3 months) and all pertinent aspects are reviewed and actions taken as required. An agenda is published  and the meeting is attended by the [[ProjectFounder]] and all directly employed staff as well as any other interested parties. The management review meeting is used as the pivotal means of ensuring that its systems are fully implemented and effective.</p>
+<p>Office\Tasks\Internal Review</p>
+<p>Office\documents\Internal Audit Form</p>
+<h3>4.1. Monitoring and Measurement</h3>
+<p>[[ProjectFounder]] monitors and measures the effectiveness of its management systems through internal review to ensure that the systems are competently implemented. Other operational monitoring may be taken to ensure that the services are undertaken to a satisfactory quality.</p>
+<p>Internal reviews will ensure that all statements of the Quality Management Manual are investigated for conformance in practice and all discrepancies found will be documented on an internal audit form and processed in accordance with the Non-conformance process.</p>
+<h3>4.2. Customer satisfaction</h3>
+<p>A quality assessment of product and service is undertaken by requesting all customers to complete the customer satisfaction form. Results of customer satisfaction surveys are reported at the management review meeting.</p>
+                            
+                        </div>
+
+
+                    </div>
+                    
+
+
+                    
+
+                </section>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="module"></div>
+
+    <div class="wrapper-footer clearfix">
+        <footer id="footer" class="footer sticky">
+
+
+            <div class="footer-content">
+                <div class="container">
+
+
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="/templates/js_impacto/js/jquery.innerfade.js"></script>
+    <script type="text/javascript" src="/templates/js_impacto/js/impacto.js"></script>
+
+    <script src='/templates/js_impacto/wright/js/utils.min.js' type='text/javascript'></script>
+    <script src='/templates/js_impacto/wright/js/stickyfooter.min.js' type='text/javascript'></script>
+
+</body>
+
+</html>

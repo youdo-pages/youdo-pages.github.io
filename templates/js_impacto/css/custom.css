@@ -1,0 +1,36 @@
+ul.newsflash-vert_menu li {
+    list-style-type: none !important;
+}
+
+body.home {
+	background-image: url("../images/teaser_bg_sm.png");
+    	background-repeat: repeat-x;
+	//background:transparent url('../images/content-bg.jpg') no-repeat 0 0;
+	//padding:16px 0 0 20px;
+}
+
+#sidebar2 {
+	//background-color:rgb(218, 218, 218);
+	//background-image: url("../images/footer_bg.png");
+	//background-repeat: repeat-x;
+	 //color: #A6A6A6;
+    //text-shadow: 1px 1px 0 #000000;
+    //width: 100%;
+    //text-align: center;
+	//padding:2px 2px 2px 2px;
+
+	background-color: #F8F8F8;
+	padding: 0 4px 0 4px;
+    border: 1px solid #D1D1D1;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+
+h4 {
+    color: rgb(157, 70, 83) !important;
+}
+
+
+

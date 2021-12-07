@@ -1,0 +1,386 @@
+@charset "utf-8";
+/************ Body ****************************************************************/
+
+body.home .wrapper-content{
+	//background-image: none;
+}
+
+
+/************ Header ****************************************************************/
+#header{
+	margin-bottom: 0;
+  background-color: #2F4145;
+  background-image: -moz-linear-gradient(top, #2F4145, #20282A);
+  background-image: -ms-linear-gradient(top, #2F4145, #20282A);
+  background-image: -webkit-gradient(linear, center top ,center bottom, from(#2F4145), to(#20282A));
+  background-image: -webkit-linear-gradient(top, #2F4145, #20282A);
+  background-image: -o-linear-gradient(top, #2F4145, #20282A);
+  background-image: linear-gradient(top, #2F4145, #20282A);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2F4145', endColorstr='#20282A', GradientType=0);
+  *background-color: #2F4145;
+  color: #7D878A;
+  text-shadow: 1px 1px 0 #000000;
+}
+#header h1,#header h2,#header h3,#header h4,#header h5,#header h6{
+    color: #7D878A;
+    text-shadow: 1px 1px 0 #000000;
+}
+
+#top{
+	padding-top: 10px;
+}
+/************ Wrapper-Content ****************************************************************/
+.wrapper-content{
+	background-image: url("../images/teaser_bg_sm.png");
+    background-repeat: repeat-x;
+    padding: 20px 20px 0;
+}
+/************ Menu  ****************************************************************/
+
+.navbar .nav > li > .dropdown-menu:before {
+	border-bottom: 0;
+	border-right: 0;
+	border-left: 0;
+}
+
+.navbar,
+#menu,
+#bottom-menu{
+	margin-bottom: 0;
+}
+#menu .navbar-inner,
+#bottom-menu .navbar-inner{
+	border-radius: 0 0 0 0;
+	border: 0 none;
+}
+
+.dropdown-menu li > span:hover,
+.dropdown-menu .active > span{
+	background-image: none;
+}
+.dropdown-menu .dropdown-menu{
+	border-radius:6px 6px 6px 6px ;
+}
+.dropdown-menu a, .dropdown-menu span.separator{
+	color: #ccc;
+}
+.navbar-inverse .navbar-inner,
+.navbar-inner{ 
+	font-family:"Helvetica Neue",Arial,Helvetica,Geneva,sans-serif;
+}
+.navbar .nav > li > .dropdown-menu:after{
+	border-bottom: 0 none;
+    border-left: 0 none;
+    border-right:0 none;
+}
+.dropdown-menu{
+	background-color: transparent;
+	background-image:url("../images/menu_bg_trans.png");
+    border: 0 none;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 0;
+}
+/************ headings ****************************************************************/
+h1{
+	color: #000;
+}
+h2{
+	color: #313131;
+}
+h3{
+	color: #505050;
+}
+h4 {
+    color: rgb(157, 70, 83);
+}
+h5 {
+    color: #767676;
+}
+h6{
+	color: #3A3936;
+}
+
+h2, h3,h4,h5,h6{
+    font-weight: normal;
+}
+/************ Sidebar special styles ****************************************************************/
+aside .module h3{
+	border-bottom: 3px solid #D8D8D8;
+}
+
+/************ Grid-to & Grid-top2  ****************************************************************/
+#grid-top h3,
+#grid-top2 h3{
+ 	color:black;
+}
+/************ Icons  ****************************************************************/
+.module ul [class^="icon-"]:before,
+.module ul [class*=" icon-"]:before
+{
+	color: #E8E8E8;
+}
+/************ List style in modules  ****************************************************************/
+#grid-bottom .module ul.nav > li a:hover,
+#grid-bottom2 .module ul.nav > li a:hover,
+#grid-top .module ul.nav > li a:hover,
+#grid-top2 .module ul.nav > li a:hover,
+#main .module ul.nav > li a:hover{
+	background-color: transparent;
+	text-decoration:none;
+}
+
+
+#login-form ul.nav.nav-list.well{
+	background-color: transparent;
+	box-shadow: 0 0;
+	border-radius: 0 0 0 0;
+	border: 0 none;
+	list-style: url("../images/bullet_clear.png")!important;
+	padding: 0 0 0 19px;
+}
+.items-more.well{
+	margin-top: 10px;
+}
+.archive-module.nav-list > li > a{
+	padding: 0;
+}
+
+/************ Filters in archive articles  ****************************************************************/
+.filters.form-actions{
+	background-color: transparent;
+}
+/************ read more  ****************************************************************/
+p.readmore{
+	float: right;
+}
+p.readmore .btn{
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+/************ Style for Template  ****************************************************************/
+label{
+	min-width: 74px;
+}
+dt label{
+	min-width: 167px;
+}
+#finder-filter-select-list label {
+    min-width: 136px;
+}
+
+#member-registration .validate{
+	margin-bottom: 0;
+}
+
+dl.article-info{
+	border-bottom: 1px solid #D8D8D8;
+}
+table.category {
+	background-color:#FBFBFB;
+}
+table.category thead{
+	background-color: #D8D8D8;
+}
+#sidebar1 select, #sidebar2 select{
+	min-width: 150px;
+}
+.counter{
+	display: block;
+	float: left;
+	color: #999;
+	line-height: 40px;
+
+}
+.icons-left{
+	float: none;
+}
+#breadcrumbs{
+	background-color: #F8F8F8;
+	font-size:0.9em;
+	padding: 0 5px;
+    border: 1px solid #D1D1D1;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+
+#breadcrumbs div.breadcrumbs {
+	padding-top: 4px;
+}
+
+#breadcrumbs .icon-caret-right{
+	background-image: url("../images/bread_sep.png") !important;
+	height: 25px;
+	width: 14px;
+	background-position: 0 0 !important;
+	margin-top: -4px;
+}
+#breadcrumbs .icon-caret-right:before{
+	content: none !important;
+}
+dl.article-info dd{
+	display: block;
+	color: #7C7C7C;
+}
+.createdby{
+	font-weight: bold;
+}
+
+/************ Footer  ****************************************************************/
+
+div.total {
+	height: 100%;
+	width: 100%;
+	margin-bottom: 80px;
+}
+
+#footer{
+	background-color:#2E2F2D;
+	background-image: url("../images/footer_bg.png");
+	background-repeat: repeat-x;
+	 color: #A6A6A6;
+    text-shadow: 1px 1px 0 #000000;
+    width: 100%;
+    text-align: center;
+}
+#footer a{
+	color: white;
+}
+#footer h3{
+	overflow: hidden;
+}
+
+#footer .span12{
+	width: auto!important;
+	display: table !important;
+	margin: 0 auto;
+	float: none;
+}
+
+.footer1, .footer2{
+	float: none;
+}
+#footer + img{
+	display: none;
+}
+#logo{
+	padding: 5px 0;
+}
+.nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a{
+	color: white;
+}
+
+@media (max-width: 979px) {
+	
+	body.toolbarpadding{
+		padding-top:0;
+	}
+	
+	
+}
+@media (max-width: 767px){
+	#header,
+	 .wrapper-menu,
+	 .wrapper-bottom-menu,
+	.wrapper-content{
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+}
+
+/* Caption */
+
+ul.captionlist {
+    margin: 0 0 10px;
+    padding: 0;
+}
+ul.captionlist li ul {
+    margin: 0;
+    padding: 0;
+}
+#content ul.captionlist li, ul.captionlist li {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 16px;
+    list-style: none outside none;
+    padding: 2px 0;
+}
+#content ul.captionlist li li, ul.captionlist li li {
+    color: #747474;
+    font-size: 0.9em;
+    font-weight: normal;
+    padding: 0;
+}
+
+
+ul ul {
+	list-style:disc;
+}
+
+cite {
+    color: #5E5E5E;
+    float: right;
+    font: italic 1.5em Georgia,"Times New Roman",Times,serif;
+}
+aside .nav.menu.nav-tabs{
+	float: none;
+}
+div.js_sv{
+	margin: 10px 0;
+}
+/*shackslides*/
+div.slideTitle h2{
+margin-bottom: 0;
+padding-bottom: 0;
+}
+#sliderNav a {
+    height: 16px !important;
+    margin: 5px 2px !important;
+    text-indent: -9999px;
+    width: 16px !important;
+}
+#sliderNav.pagination ul > li > a,
+#sliderNav.pagination ul > li > span{
+	border:0 none;
+}
+#sliderNav.pagination ul{
+	box-shadow: none;
+}
+body #sliderNav ul li  a.sliderPrev{
+	background-image: url(../images/arrow-prev.png) !important;
+	background-position: center top;
+	background-repeat: no-repeat; 
+}
+body #sliderNav ul li  a.sliderNext {
+	background-image: url(../images/arrow-next.png) !important;
+	background-position: center top;
+	background-repeat: no-repeat; 
+}
+body .slidermanButtonsCont .sliderPrev, 
+body .slidermanButtonsCont .sliderNext{
+	margin-top: 6%;
+}
+#slider a{
+	text-indent: -9999px;
+}
+#slider a.sliderPrev {
+    background: url("../images/arrows.png") no-repeat scroll 0 0 transparent !important;
+    color: transparent;
+    height: 30px;
+    width: 31px !important;
+}
+#slider a.sliderNext {
+    background: url("../images/arrows.png") no-repeat scroll -30px 0 transparent !important;
+    color: transparent;
+    height: 30px;
+    width: 31px !important;
+}
+body #slider {
+    border: 5px solid white;
+    box-shadow: 0 0 8px #999999;
+    height: auto !important;
+    width: 98% !important;
+}

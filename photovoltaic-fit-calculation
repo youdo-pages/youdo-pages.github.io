@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB" dir="ltr">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://www4.completepicture.co.uk" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Sap Calculations, U-Value Calculator, MCS Microgeneration QMS," />
+    <meta name="author" content="Paul Dennis" />
+    <meta name="description"
+        content="Complete Picture, Sap Calculations, U-Value Calculator, MCS Microgeneration QMS, Project Extranet" />
+    <meta name="generator" content="Joomla! - Open Source Content Management" />
+    <title>
+        Solar PV
+    </title>
+
+    <link href="/templates/js_impacto/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link href="/plugins/system/jcemediabox/css/jcemediabox.min.css?9d108330040bd2b7386ad9c4cf8105fc" rel="stylesheet"
+        type="text/css" />
+    <link href="/media/system/css/modal.css?2cb05687b1c147e84ad7b39fff7abb72" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/style-red.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/joomla30-red-extended.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/joomla30-red-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/wright/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+
+    <script type="application/json" class="joomla-script-options new">
+        {
+            "csrf.token": "8c2c0c9f3a5381be431f44bc9e4813cd",
+            "system.paths": {
+                "root": "",
+                "base": ""
+            }
+        }
+    </script>
+    <script src="/templates/js_impacto/js/jui/jquery.min.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript">
+    </script>
+    <script src="/media/jui/js/jquery-noconflict.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/jui/js/jquery-migrate.min.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/caption.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/plugins/system/jcemediabox/js/jcemediabox.min.js?df182ff78a8c3234076ac72bcc4e27d1"
+        type="text/javascript"></script>
+    <script src="/templates/js_impacto/js/jui/bootstrap.min.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript">
+    </script>
+    <script src="/media/system/js/mootools-core.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/core.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/mootools-more.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/modal.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/js/lightning.min.js" type="text/javascript"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" type="text/javascript"></script>
+
+
+
+
+
+    <script type="text/javascript">
+        jQuery(window).on('load', function () {
+            new JCaption('img.caption');
+        });
+        jQuery(document).ready(function () {
+            WFMediaBox.init({
+                "base": "\/",
+                "theme": "standard",
+                "mediafallback": 0,
+                "mediaselector": "audio,video",
+                "width": "",
+                "height": "",
+                "lightbox": 0,
+                "shadowbox": 0,
+                "icons": 1,
+                "overlay": 1,
+                "overlay_opacity": 0.8,
+                "overlay_color": "#000000",
+                "transition_speed": 500,
+                "close": 2,
+                "scrolling": "fixed",
+                "labels": {
+                    "close": "Close",
+                    "next": "Next",
+                    "previous": "Previous",
+                    "cancel": "Cancel",
+                    "numbers": "{{numbers}}",
+                    "numbers_count": "{{current}} of {{total}}"
+                }
+            });
+        });
+        jQuery(function ($) {
+            SqueezeBox.initialize({});
+            initSqueezeBox();
+            $(document).on('subform-row-add', initSqueezeBox);
+
+            function initSqueezeBox(event, container) {
+                SqueezeBox.assign($(container || document).find('a.modal').get(), {
+                    parse: 'rel'
+                });
+            }
+        });
+
+        window.jModalClose = function () {
+            SqueezeBox.close();
+        };
+
+        // Add extra modal close functionality for tinyMCE-based editors
+        document.onreadystatechange = function () {
+            if (document.readyState == 'interactive' && typeof tinyMCE != 'undefined' && tinyMCE) {
+                if (typeof window.jModalClose_no_tinyMCE === 'undefined') {
+                    window.jModalClose_no_tinyMCE = typeof (jModalClose) == 'function' ? jModalClose : false;
+
+                    jModalClose = function () {
+                        if (window.jModalClose_no_tinyMCE) window.jModalClose_no_tinyMCE.apply(this, arguments);
+                        tinyMCE.activeEditor.windowManager.close();
+                    };
+                }
+
+                if (typeof window.SqueezeBoxClose_no_tinyMCE === 'undefined') {
+                    if (typeof (SqueezeBox) == 'undefined') SqueezeBox = {};
+                    window.SqueezeBoxClose_no_tinyMCE = typeof (SqueezeBox.close) == 'function' ? SqueezeBox.close :
+                        false;
+
+                    SqueezeBox.close = function () {
+                        if (window.SqueezeBoxClose_no_tinyMCE) window.SqueezeBoxClose_no_tinyMCE.apply(this,
+                            arguments);
+                        tinyMCE.activeEditor.windowManager.close();
+                    };
+                }
+            }
+        };
+
+        jQuery(function ($) {
+            initTooltips();
+            $("body").on("subform-row-add", initTooltips);
+
+            function initTooltips(event, container) {
+                container = container || document;
+                $(container).find(".hasTooltip").tooltip({
+                    "html": true,
+                    "container": "body"
+                });
+            }
+        });
+    </script>
+
+
+
+
+    <meta name="google-site-verification" content="" />
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-18156584-1']);
+        _gaq.push(['_gat._anonymizeIp']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+                '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+<body class="is_firefox v_79  addGradient b_jdefault h_jdefault id_209 rev_3.6.11_3.7.11">
+    <header id="header">
+        <div class="container">
+            <div class="row clearfix">
+                <div id="logo" class="span5"><a href="https://www4.completepicture.co.uk" class="image">
+                        <h2>Complete Picture SAP U-Value MCS Software</h2><img
+                            src="https://www4.completepicture.co.uk/images/logo.png" alt="" title="" />
+                    </a></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper-menu">
+        <div class="container">
+            <nav id="menu">
+                <div class="navbar ">
+                    <div class="navbar-inner">
+                        <a class="btn btn-navbar collapsed" data-toggle="collapse" data-target="#nav-menu">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <div class="nav-collapse" id="nav-menu">
+
+                            
+<ul class="menu nav">
+      
+</ul>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="wrapper-content">
+        <div class="container">
+
+
+            <div id="main-content" class="row-fluid">
+
+
+
+
+
+                <section class="span9" id="main">
+
+                    <div id="breadcrumbs">
+                        
+                    </div>
+
+                    <div id="system-message-container">
+                    </div>
+
+                    
+
+                    <div class="item-page" itemscope itemtype="http://schema.org/Article">
+                        <!-- Schema.org markup -->
+                        <meta itemprop="name" content="&lt;!--#4DHTML article_o.title--&gt; : Undefined" />
+                        <meta itemprop="headline" content="Solar PV Calculation" />
+                        <meta itemprop="inLanguage" content="en-GB" />
+                        <meta itemprop="genre" content="MCS Sap Calculator" />
+                        <meta itemprop="genre" content="Products" />
+                        <meta itemprop="dateCreated" content="2007-05-10T16:45:51+00:00" />
+                        <meta itemprop="dateModified" content="2013-11-28T15:39:17+00:00" />
+                        <meta itemprop="datePublished" content="2007-05-10T16:45:38+00:00" />
+                        <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                            <meta itemprop="name" content="Complete Picture SAP U-Value MCS Software" />
+                            <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                                <meta itemprop="url" content="https://www.completepicture.co.uk/images/logo.png">
+                            </div>
+                        </div>
+                        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <meta itemprop="name" content="" />
+                        </div>
+                      
+
+                        <div class="page-header">
+                            <h2>
+                                Solar PV Calculation
+                            </h2>
+
+
+                        </div>
+
+
+
+
+
+
+                        <div itemprop="articleBody">
+                            <p>The online solar PV calculator complies with the latest MCS standard using the solar irradiance tables, over shading factor, panel orientation and pitch to calculate the solar output of the panel. Available through your browser the PV calculator incorporates a feed in tariff calculation, the creation of a schematic diagram including inverter details and the G83 form. In addition to the solar irradiation tables the customer postcode is used to allocate the wind zone and wind speed for BRE 489 wind load calculation.</p>
+<p>The calculation is integrated with the quality management system. This means you can automatically allocate a calculation to a customer and project and the customer details are inserted into the reports when printed to pdf. Completed reports are then uploaded to the selected QMS customer file. Three report types are available.</p>
+<h4>Feed in Tariff Calculation</h4>
+<p>A feed in tariff report includes a graphical representation of the breakeven point of the system and detailed payback table which shows the feed in tariff payments available for that tariff. The feed in tariffs are updated when issued by Ofgem and the user can select the relevant tariff for the calculation. The system report includes the feed in tariff, wind load and system details.</p>
+<h4>SSEG and Schematic Diagram</h4>
+<p>In addition to the feed in tariff calculation you can enter the SSEG inverter details and select the relevant distribution network operator. This will enable you to produce a schematic diagram which includes the customer details from the quality management system.A standard G83 form can also be produced incorporating the customer's information which can be e-mailed to the DNO.</p>
+<h4>QMS Compliance</h4>
+<p>The PV calculation is integrated with the quality management system and reports these are uploaded into the customer's QMS file.</p>
+<h4>Wind Load</h4>
+<p>MIS 3002 requires the contractor to confirm that the roof is capable of withstanding the wind loads generated by the photovoltaic installation. Wind loads are calculated in accordance with BRE Digest 489 Wind loads on roof-based photovoltaic systems. The wind load module to calculate the loading of each panel and the total system for the roof in accordance with BRE Digest 489. This is simple to use and will ensure you will meet your compliance audit by providing a wind load calculation for each installation.</p>
+<h3>Please click on the images in the right hand column for a detailed explanation of how the software works.</h3>
+                            
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+                <aside class="span3" id="sidebar2">
+                    &lt;!--4DIF (load_mod_custom=TRUE)--&gt; : A Boolean argument was expected.
+                    
+
+                </aside>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="module"></div>
+
+    <div class="wrapper-footer clearfix">
+        <footer id="footer" class="footer sticky">
+
+
+            <div class="footer-content">
+                <div class="container">
+
+
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="/templates/js_impacto/js/jquery.innerfade.js"></script>
+    <script type="text/javascript" src="/templates/js_impacto/js/impacto.js"></script>
+
+    <script src='/templates/js_impacto/wright/js/utils.min.js' type='text/javascript'></script>
+    <script src='/templates/js_impacto/wright/js/stickyfooter.min.js' type='text/javascript'></script>
+</body>
+
+</html>

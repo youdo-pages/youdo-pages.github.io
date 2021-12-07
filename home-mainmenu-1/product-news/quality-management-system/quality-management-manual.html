@@ -1,0 +1,437 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB" dir="ltr">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://www2.completepicture.co.uk" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Sap Calculations, U-Value Calculator, MCS Microgeneration QMS," />
+    <meta name="author" content="Paul Dennis" />
+    <meta name="description"
+        content="Complete Picture, Sap Calculations, U-Value Calculator, MCS Microgeneration QMS, Project Extranet" />
+    <meta name="generator" content="Joomla! - Open Source Content Management" />
+    <title>
+        Product News
+    </title>
+
+    <link href="/templates/js_impacto/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link href="/plugins/system/jcemediabox/css/jcemediabox.min.css?9d108330040bd2b7386ad9c4cf8105fc" rel="stylesheet"
+        type="text/css" />
+    <link href="/media/system/css/modal.css?2cb05687b1c147e84ad7b39fff7abb72" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/style-red.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/joomla30-red-extended.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/joomla30-red-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/wright/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+
+    <script type="application/json" class="joomla-script-options new">
+        {
+            "csrf.token": "8c2c0c9f3a5381be431f44bc9e4813cd",
+            "system.paths": {
+                "root": "",
+                "base": ""
+            }
+        }
+    </script>
+    <script src="/templates/js_impacto/js/jui/jquery.min.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript">
+    </script>
+    <script src="/media/jui/js/jquery-noconflict.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/jui/js/jquery-migrate.min.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/caption.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/plugins/system/jcemediabox/js/jcemediabox.min.js?df182ff78a8c3234076ac72bcc4e27d1"
+        type="text/javascript"></script>
+    <script src="/templates/js_impacto/js/jui/bootstrap.min.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript">
+    </script>
+    <script src="/media/system/js/mootools-core.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/core.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/mootools-more.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/modal.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/js/lightning.min.js" type="text/javascript"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" type="text/javascript"></script>
+
+
+
+
+
+    <script type="text/javascript">
+        jQuery(window).on('load', function () {
+            new JCaption('img.caption');
+        });
+        jQuery(document).ready(function () {
+            WFMediaBox.init({
+                "base": "\/",
+                "theme": "standard",
+                "mediafallback": 0,
+                "mediaselector": "audio,video",
+                "width": "",
+                "height": "",
+                "lightbox": 0,
+                "shadowbox": 0,
+                "icons": 1,
+                "overlay": 1,
+                "overlay_opacity": 0.8,
+                "overlay_color": "#000000",
+                "transition_speed": 500,
+                "close": 2,
+                "scrolling": "fixed",
+                "labels": {
+                    "close": "Close",
+                    "next": "Next",
+                    "previous": "Previous",
+                    "cancel": "Cancel",
+                    "numbers": "{{numbers}}",
+                    "numbers_count": "{{current}} of {{total}}"
+                }
+            });
+        });
+        jQuery(function ($) {
+            SqueezeBox.initialize({});
+            initSqueezeBox();
+            $(document).on('subform-row-add', initSqueezeBox);
+
+            function initSqueezeBox(event, container) {
+                SqueezeBox.assign($(container || document).find('a.modal').get(), {
+                    parse: 'rel'
+                });
+            }
+        });
+
+        window.jModalClose = function () {
+            SqueezeBox.close();
+        };
+
+        // Add extra modal close functionality for tinyMCE-based editors
+        document.onreadystatechange = function () {
+            if (document.readyState == 'interactive' && typeof tinyMCE != 'undefined' && tinyMCE) {
+                if (typeof window.jModalClose_no_tinyMCE === 'undefined') {
+                    window.jModalClose_no_tinyMCE = typeof (jModalClose) == 'function' ? jModalClose : false;
+
+                    jModalClose = function () {
+                        if (window.jModalClose_no_tinyMCE) window.jModalClose_no_tinyMCE.apply(this, arguments);
+                        tinyMCE.activeEditor.windowManager.close();
+                    };
+                }
+
+                if (typeof window.SqueezeBoxClose_no_tinyMCE === 'undefined') {
+                    if (typeof (SqueezeBox) == 'undefined') SqueezeBox = {};
+                    window.SqueezeBoxClose_no_tinyMCE = typeof (SqueezeBox.close) == 'function' ? SqueezeBox.close :
+                        false;
+
+                    SqueezeBox.close = function () {
+                        if (window.SqueezeBoxClose_no_tinyMCE) window.SqueezeBoxClose_no_tinyMCE.apply(this,
+                            arguments);
+                        tinyMCE.activeEditor.windowManager.close();
+                    };
+                }
+            }
+        };
+
+        jQuery(function ($) {
+            initTooltips();
+            $("body").on("subform-row-add", initTooltips);
+
+            function initTooltips(event, container) {
+                container = container || document;
+                $(container).find(".hasTooltip").tooltip({
+                    "html": true,
+                    "container": "body"
+                });
+            }
+        });
+    </script>
+
+
+
+
+    <meta name="google-site-verification" content="" />
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-18156584-1']);
+        _gaq.push(['_gat._anonymizeIp']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+                '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+<body class="is_firefox v_79  addGradient b_jdefault h_jdefault id_209 rev_3.6.11_3.7.11">
+    <header id="header">
+        <div class="container">
+            <div class="row clearfix">
+                <div id="logo" class="span5"><a href="https://www2.completepicture.co.uk" class="image">
+                        <h2>Complete Picture SAP U-Value MCS Software</h2><img
+                            src="https://www2.completepicture.co.uk/images/logo.png" alt="" title="" />
+                    </a></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper-menu">
+        <div class="container">
+            <nav id="menu">
+                <div class="navbar ">
+                    <div class="navbar-inner">
+                        <a class="btn btn-navbar collapsed" data-toggle="collapse" data-target="#nav-menu">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <div class="nav-collapse" id="nav-menu">
+
+                            
+<ul class="menu nav">
+      
+</ul>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="wrapper-content">
+        <div class="container">
+
+
+            <div id="main-content" class="row-fluid">
+
+
+
+
+
+                <section class="span9" id="main">
+
+                    <div id="breadcrumbs">
+                    
+                    </div>
+
+                    <div id="system-message-container">
+                    </div>
+                    
+                    
+                    
+
+                    <div class="item-page" itemscope itemtype="http://schema.org/Article">
+                        <!-- Schema.org markup -->
+                        <meta itemprop="name" content="&lt;!--#4DHTML article_o.title--&gt; : Undefined" />
+                        <meta itemprop="headline" content="Solar PV Calculation" />
+                        <meta itemprop="inLanguage" content="en-GB" />
+                        <meta itemprop="genre" content="MCS Sap Calculator" />
+                        <meta itemprop="genre" content="Products" />
+                        <meta itemprop="dateCreated" content="2007-05-10T16:45:51+00:00" />
+                        <meta itemprop="dateModified" content="2013-11-28T15:39:17+00:00" />
+                        <meta itemprop="datePublished" content="2007-05-10T16:45:38+00:00" />
+                        <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                            <meta itemprop="name" content="Complete Picture SAP U-Value MCS Software" />
+                            <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                                <meta itemprop="url" content="https://www.completepicture.co.uk/images/logo.png">
+                            </div>
+                        </div>
+                        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <meta itemprop="name" content="" />
+                        </div>
+
+
+                        <div class="page-header">
+                            <h2>
+                                Quality Management Manual
+                            </h2>
+
+
+                        </div>
+
+
+
+
+
+
+                        <div itemprop="articleBody">
+                            <h2>1.	Introduction</h2>
+<p>This quality manual explains the use of the online quality management system (QMS) from Complete Picture UK Ltd for compliance with the requirements of the MCS accreditation scheme.</p>
+<h2>2.	Scope</h2>
+<p>This procedure applies to all employees and sub contractors of [[ProjectFounder]] whilst in the course of their employment.</p>
+<h3>2.1. Convention</h3>
+<p>The QMS from Complete Picture uses tasks and projects to manage the MCS process. "QMS" as referred to in this document is the online quality management system from complete picture UK Ltd.</p>
+<p>1.	"Office" is the Office QMS project within the QMS. The office project contains the tasks and documents which are used to manage the business processes.</p>
+<p>2.	"Master" is the master project template (one for each MCS discipline) within the online quality management system. The master template contains the tasks of documents which are used during an installation.</p>
+<p>3.	"Project" refers to a copy of the "Master" which is used for a customer installation.</p>
+<p>Within each project there are tasks and documents. The conventions are as follows. Office\Task\Name of Task refers to a task and Office\documents\name of document refers to a document within the Office QMS project.</p>
+<h2>3.	Requirement MCS 001 Review of Company Details and Responsibility</h2>
+<p>•	During assessment and surveillance visits, the assessor will check the details from the application form or certificate(s) to ensure that all details are correct.</p>
+<p>•	The Company is asked to specify a named individual "Nominee", whose responsibility shall be the control and overall supervision of all activities, which fall within the scope of the Scheme. This Nominee shall be the primary contact between the Company and the certification body.</p>
+<p>•	The Company shall document who is responsible for each activity and their deputy or nominee.</p>
+<p>[ProjectFounder]] "the nominee " provides installation, design and set to work service within the United Kingdom for installation of</p>
+<p>[[ProjectFounder]] is a private owned limited company providing services from: [[ProjectFoundersAddress]]</p>
+<p>A responsible person can be assigned to each task and/or documents this meets the MCS requirement. Office\documents\Employee list.</p>
+<h2>4.	Requirement MCS 001 Review of Quality Management System / Quality Plan</h2>
+<p>•	During the assessment the status of the Company's Quality Management System or Quality Plan will be reviewed as appropriate.</p>
+<p>The Quality Management Manual documents the use of the QMS.</p>
+<p>Documents are found in the repository within the Office\documents folder.</p>
+<p>The service delivery process is defined in Office\Documents\Service Delivery.</p>
+<p>The Management Procedures are listed in Office\Documents\Management Procedure.</p>
+<p>This manual shows the relationship between the QMS and MCS requirements.</p>
+<h2>5.	Requirement MCS 001 Action taken to resolve previous non-conformities</h2>
+<p>•	At the time of assessment, the Assessor shall review any previous non-conformities to ensure that the appropriate corrective and preventative actions have been taken and have been satisfactorily completed and implemented.</p>
+<p>Office\Tasks\Non Conformance contains actions taken to resolve non conformance</p>
+<h2>6.	Requirement MCS 001 Internal Review</h2>
+<p>•	The Nominee shall hold regular (at least quarterly) meetings with other staff members to review the effect of each of the Installation Quality Control procedures and deal with any problems in the system. Records of these meetings and corrective actions shall be kept by the Company and will be reviewed by Assessors.</p>
+<p>Office\Tasks\Internal Review is scheduled every 3 months and contains actions undertaken.</p>
+<h2>7.	Requirement MCS 001 Document Control</h2>
+<p>•	The Company shall have a master list or equivalent document which details all documents and data associated with the installation process including and material specifications. As a minimum, the list shall contain the document reference, issue status, number of pages and approval authorisation.</p>
+<p>Office\Documents\Document List contains the list of administration documents</p>
+<p>Master\Documents\Document List contains the list of project documents</p>
+<p>Each Document has a name this is the unique reference</p>
+<p>All documents are electronic single page. If printed the page number is inserted.</p>
+<p>•	All documents and data shall have a unique identity and page number on every page, be authorised for use by representatives of the Company and be available at all locations where they are to be used. Superseded/obsolete documents shall be removed from all points of issue. The Company shall document procedures, which determine how the above requirements are managed.</p>
+<p>The latest version is the current issue.</p>
+<p>Version control is automatic</p>
+<p>The responsible person is authorised to update the document</p>
+<p>The attached task is the procedure</p>
+<p>•	Note: Documented procedures are acceptable in electronic form.</p>
+<p>•	Procedures shall also identify the method for back up and retrieval of documentation and data, whether in hard copy or electronic formats.</p>
+<p>The QMS is hosted by Webfusion Ltd and is backed every night to Complete Picture UK Ltd server at a separate location.</p>
+<p>•	The Company shall maintain copies of relevant national and international standards associated with the installation(s) and have a documented method/mechanism for ensuring that they have access to the latest editions including any amendments.</p>
+<p>•	Where software is used for calculation or verification a control process must be in place to ensure the correct version of software is being used</p>
+<p>•	The company shall have access to and demonstrate that they work to the most up to date copies of building regulations, planning regulations and Health and Safety Regulations</p>
+<p>Documents are available via the QMS website and through the SAP Document Manager</p>
+<p>Software notifications of the latest version are via email from Complete Picture UK Ltd and through QMS forum announcement. The software is downloaded from the website and can only be used with a current subscription.</p>
+<p>All technical data is reviewed via the Office\Tasks\ MCS 001 Internal Review</p>
+<h2>8.	Requirement MCS 001 Customer requirements and contracts</h2>
+<p>The Company shall review orders, contracts or tenders to ensure that:</p>
+<p>•	-The requirements are adequately defined for each installation for quantity, packaging, delivery etc.</p>
+<p>•	-The Company has the resource and capability to meet the order/contract requirements. Where the time scales cannot be met, the Company shall detail when the order/contract will be fulfilled.</p>
+<p>•	Records of this activity shall be maintained for all orders/contracts and tenders.</p>
+<p>•	A process shall also exist for managing amendments to contracts / orders.</p>
+<p>•	The company shall have a process for ensuring relevant planning and building control requirements are addressed appropriately</p>
+<p>Project\Tasks\Customer Requirements is completed for each enquiry</p>
+<p>Project \Tasks\Sales Proposal defines the contract</p>
+<p>Project \Tasks\Order Acknowledgement confirms the order to the customer</p>
+<p>Project \Tasks\Confirm Install Date confirms the installation date. The installation date is entered into the electronic calendar and the project deadline is set.</p>
+<p>Project \Tasks\Permissions and Approvals to confirm planning requirements</p>
+<p>The customer is a member of each task and is automatically notified of any amendme is nts via the QMS</p>
+<p>Project \Files\ contains the list of all customer communication for the project.</p>
+<h2>9.	Requirement MCS 001 Purchasing</h2>
+<p>•	The Company shall identify his suppliers of designs, products and materials which are incorporated into the final installation, including packaging.</p>
+<p>•	A master list of suppliers shall be established to identify their address, location, contact details and the service or products/materials supplied. The method for adding or removing suppliers and products/materials from the master list shall be established e.g. previous dealings/past history, product approval.</p>
+<p>•	Purchase orders for materials shall clearly identify the part number, class, grade, species (timber), size, finish, trade name and any other details quoting (where necessary), tolerances or relevant installation standards.</p>
+<p>Office\Documents\Supplier List</p>
+<p>Office\Tasks\Internal Review includes review of suppliers</p>
+<p>Project\Files\Purchase Order contains the purchase orders</p>
+<h2>10.	Requirement MCS 001 Review of Product Specification</h2>
+<p>•	Check that no changes have occurred that should have been notified to the Certification body</p>
+<p>Office\Tasks\Internal Review includes review of products</p>
+<h2>11.	Requirement MCS 001 Action on Non-conforming material</h2>
+<p>•	The Company shall document procedures to ensure that any material which is deemed to be non-conforming, has been adequately identified (including by physical location), such that it is prevented from unintended use or packaged with conforming material.</p>
+<p>•	The procedures shall identify the actions necessary for the non-conforming material to be scrapped, re-worked or re-graded including labelling and authorisation requirements.</p>
+<p>Projects\Tasks\Materials delivery verification</p>
+<p>Projects\Documents\Non Conformance Report</p>
+<h2>12.	Requirement MCS 001 Inspection and in process testing</h2>
+<p>•	All stages of the Installation, inspection and testing is required to be carried out under controlled conditions and shall include:</p>
+<p>•	Incoming inspection - All products and materials are checked to ensure that the correct product/material has been supplied and the quantities are correct. Any critical measurements should be identified and inspection records exist including a statement of acceptance or rejection of products/materials and the basis for this decision.</p>
+<p>•	In Process and Final Inspection – Installations shall be inspected in process and at final inspection to ensure that the requirements of the standards or specifications are met.</p>
+<p>•	The Company shall have processes to ensure that all notifiable work under the building regulations have been appropriately notified and managed</p>
+<p>Projects\Tasks\Commission System</p>
+<p>Projects\Documents\Commissioning Form</p>
+<p>Projects\Tasks\Notifiable Work</p>
+<h2>13.	Requirement MCS 001 Equipment</h2>
+<p>•	The Company shall ensure that suitable equipment exists for the control and measurement of the installations and that it is calibrated and labelled to indicate its calibration status.</p>
+<p>•	A record shall be kept of all equipment, which is used by the Company. The record shall include the serial number or number allocated by the Company, scale and frequency of checking/calibration along with suitable objective evidence to demonstrate that the equipment is capable of the accuracy which is required for the specified measurements.</p>
+<p>Office\Tasks\Equipment</p>
+<p>Office\Document\Equipment List</p>
+<h2>14.	Requirement MCS 001 Storage, handling, packaging and transportation</h2>
+<p>•	The Company shall carry out under controlled conditions storage, handling, packaging, and transportation of the products to prevent damage or deterioration.</p>
+<h2>15.	Requirement MCS 001 Certification Marks</h2>
+<p>•	The use of the appropriate Mark on the product/installation and on any stationery will be reviewed to ensure that approval has been granted by the Certification body for the intended use.</p>
+<p>Office\Documents\Supplier List</p>
+<h2>16.	Requirement MCS 001 Records</h2>
+<p>•	Records related to installation and inspection must be kept by the Company for a minimum of two years, subsequent to their examination and approval.</p>
+<p>•	Contract related records must as a minimum contain details of customer reference, dates, quantities and details of all installations supplied. The Company must keep these records for a minimum of five years.</p>
+<p>Office\Tasks\Records Archive</p>
+<h2>17.	Requirement MCS 001 Complaints</h2>
+<p>•	The Company shall manage complaints under controlled conditions and shall keep a log /register of any complaints received and the corrective and preventative actions taken to satisfy the complaint and where necessary the complainant. All complaints must be dealt with in a timely and effective manner.</p>
+<p>Projects\Tasks\Complaints</p>
+<p>Projects\Documents\Compliant Form</p>
+<p>Office\Tasks\Internal Review</p>
+<h2>18.	Requirement MCS 001 Corrective / Preventive action</h2>
+<p>•	The Company shall have procedures for corrective and preventive actions</p>
+<p>•	Preventive action is action that is taken to avoid the occurrence of a problem (as opposed to corrective action which an action is taken to prevent the reoccurrence of a problem).</p>
+<p>The QMS includes a message board, where an opportunity for corrective and preventive action is identified, post a message to the board whereby options can be discussed. The message board to be reviewed within the internal review task</p>
+<p>Office\Messages</p>
+<p>Office\Tasks\Internal Review</p>
+<h2>19.	Requirement MCS 001 Training and competence</h2>
+<p>•	All staff employed in installation activities must have received adequate training in each of the areas/operations in which they are involved.</p>
+<p>•	The Company must have a training record for each employee which details methods of training and approved areas of operation. These should identify the training authority and be signed by the employee as well as the training authority.</p>
+<p>[[AssignedMember]] will brief all new and existing personnel on the requirements of the QMS to ensure full compliance.</p>
+<p>Office\tasks\MCS 001 training</p>
+<p>Office\Documents\Training Record</p>
+<h2>20.	Requirement MCS 001 Health and Safety</h2>
+<p>•	The company must have a health and safety policies and procedures to ensure all installations are conducted safely.</p>
+<p>The company health and safety plan can be found at</p>
+<p>Office\tasks\</p>
+<p>Office\documents\</p>
+<p>Risk assessments to be conducted for each project</p>
+<p>Project\tasks\risk assessment</p>
+<p>Projects\documents\risk assessment</p>
+                            
+                        </div>
+
+
+                    </div>
+                    
+
+
+                    
+
+                </section>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="module"></div>
+
+    <div class="wrapper-footer clearfix">
+        <footer id="footer" class="footer sticky">
+
+
+            <div class="footer-content">
+                <div class="container">
+
+
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="/templates/js_impacto/js/jquery.innerfade.js"></script>
+    <script type="text/javascript" src="/templates/js_impacto/js/impacto.js"></script>
+
+    <script src='/templates/js_impacto/wright/js/utils.min.js' type='text/javascript'></script>
+    <script src='/templates/js_impacto/wright/js/stickyfooter.min.js' type='text/javascript'></script>
+
+</body>
+
+</html>

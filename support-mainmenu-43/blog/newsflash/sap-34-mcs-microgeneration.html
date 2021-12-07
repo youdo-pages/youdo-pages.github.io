@@ -1,0 +1,481 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB" dir="ltr">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://www2.completepicture.co.uk" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Sap Calculations, U-Value Calculator, MCS Microgeneration QMS," />
+    <meta name="author" content="Paul Dennis" />
+    <meta name="description"
+        content="Complete Picture, Sap Calculations, U-Value Calculator, MCS Microgeneration QMS, Project Extranet" />
+    <meta name="generator" content="Joomla! - Open Source Content Management" />
+    <title>
+        Blog
+    </title>
+
+    <link href="/templates/js_impacto/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link href="/plugins/system/jcemediabox/css/jcemediabox.min.css?9d108330040bd2b7386ad9c4cf8105fc" rel="stylesheet"
+        type="text/css" />
+    <link href="/media/system/css/modal.css?2cb05687b1c147e84ad7b39fff7abb72" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/style-red.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/joomla30-red-extended.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/joomla30-red-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="/templates/js_impacto/wright/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+
+    <script type="application/json" class="joomla-script-options new">
+        {
+            "csrf.token": "8c2c0c9f3a5381be431f44bc9e4813cd",
+            "system.paths": {
+                "root": "",
+                "base": ""
+            }
+        }
+    </script>
+    <script src="/templates/js_impacto/js/jui/jquery.min.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript">
+    </script>
+    <script src="/media/jui/js/jquery-noconflict.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/jui/js/jquery-migrate.min.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/caption.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/plugins/system/jcemediabox/js/jcemediabox.min.js?df182ff78a8c3234076ac72bcc4e27d1"
+        type="text/javascript"></script>
+    <script src="/templates/js_impacto/js/jui/bootstrap.min.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript">
+    </script>
+    <script src="/media/system/js/mootools-core.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/core.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/mootools-more.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/media/system/js/modal.js?2cb05687b1c147e84ad7b39fff7abb72" type="text/javascript"></script>
+    <script src="/js/lightning.min.js" type="text/javascript"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" type="text/javascript"></script>
+
+
+
+
+
+    <script type="text/javascript">
+        jQuery(window).on('load', function () {
+            new JCaption('img.caption');
+        });
+        jQuery(document).ready(function () {
+            WFMediaBox.init({
+                "base": "\/",
+                "theme": "standard",
+                "mediafallback": 0,
+                "mediaselector": "audio,video",
+                "width": "",
+                "height": "",
+                "lightbox": 0,
+                "shadowbox": 0,
+                "icons": 1,
+                "overlay": 1,
+                "overlay_opacity": 0.8,
+                "overlay_color": "#000000",
+                "transition_speed": 500,
+                "close": 2,
+                "scrolling": "fixed",
+                "labels": {
+                    "close": "Close",
+                    "next": "Next",
+                    "previous": "Previous",
+                    "cancel": "Cancel",
+                    "numbers": "{{numbers}}",
+                    "numbers_count": "{{current}} of {{total}}"
+                }
+            });
+        });
+        jQuery(function ($) {
+            SqueezeBox.initialize({});
+            initSqueezeBox();
+            $(document).on('subform-row-add', initSqueezeBox);
+
+            function initSqueezeBox(event, container) {
+                SqueezeBox.assign($(container || document).find('a.modal').get(), {
+                    parse: 'rel'
+                });
+            }
+        });
+
+        window.jModalClose = function () {
+            SqueezeBox.close();
+        };
+
+        // Add extra modal close functionality for tinyMCE-based editors
+        document.onreadystatechange = function () {
+            if (document.readyState == 'interactive' && typeof tinyMCE != 'undefined' && tinyMCE) {
+                if (typeof window.jModalClose_no_tinyMCE === 'undefined') {
+                    window.jModalClose_no_tinyMCE = typeof (jModalClose) == 'function' ? jModalClose : false;
+
+                    jModalClose = function () {
+                        if (window.jModalClose_no_tinyMCE) window.jModalClose_no_tinyMCE.apply(this, arguments);
+                        tinyMCE.activeEditor.windowManager.close();
+                    };
+                }
+
+                if (typeof window.SqueezeBoxClose_no_tinyMCE === 'undefined') {
+                    if (typeof (SqueezeBox) == 'undefined') SqueezeBox = {};
+                    window.SqueezeBoxClose_no_tinyMCE = typeof (SqueezeBox.close) == 'function' ? SqueezeBox.close :
+                        false;
+
+                    SqueezeBox.close = function () {
+                        if (window.SqueezeBoxClose_no_tinyMCE) window.SqueezeBoxClose_no_tinyMCE.apply(this,
+                            arguments);
+                        tinyMCE.activeEditor.windowManager.close();
+                    };
+                }
+            }
+        };
+
+        jQuery(function ($) {
+            initTooltips();
+            $("body").on("subform-row-add", initTooltips);
+
+            function initTooltips(event, container) {
+                container = container || document;
+                $(container).find(".hasTooltip").tooltip({
+                    "html": true,
+                    "container": "body"
+                });
+            }
+        });
+    </script>
+
+
+
+
+    <meta name="google-site-verification" content="" />
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-18156584-1']);
+        _gaq.push(['_gat._anonymizeIp']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+                '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+<body class="is_firefox v_79  addGradient b_jdefault h_jdefault id_209 rev_3.6.11_3.7.11">
+    <header id="header">
+        <div class="container">
+            <div class="row clearfix">
+                <div id="logo" class="span5"><a href="https://www2.completepicture.co.uk" class="image">
+                        <h2>Complete Picture SAP U-Value MCS Software</h2><img
+                            src="https://www2.completepicture.co.uk/images/logo.png" alt="" title="" />
+                    </a></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper-menu">
+        <div class="container">
+            <nav id="menu">
+                <div class="navbar ">
+                    <div class="navbar-inner">
+                        <a class="btn btn-navbar collapsed" data-toggle="collapse" data-target="#nav-menu">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <div class="nav-collapse" id="nav-menu">
+
+                            
+<ul class="menu nav">
+ 
+
+
+
+
+
+<li class="deeper dropdown parent "><a class=" dropdown-toggle" href="/index.html">Home<b class="caret"></b></a>
+<ul class="dropdown-menu">
+
+ 1
+ 
+        <li class=""><a href="/home-mainmenu-1/terms-and-conditions.html">Terms and Conditions</a></li>
+ 
+        <li class=""><a href="/home-mainmenu-1/news-215.html">News</a></li>
+ 
+        <li class=""><a href="/home-mainmenu-1/contact-us.html">Contact Us</a></li>
+ 
+        <li class=""><a href="/home-mainmenu-1/about-298.html">About</a></li>
+ 
+        <li class=""><a href="/home-mainmenu-1/product-news.html">Product News</a></li>
+ 
+        <li class=""><a href="/home-mainmenu-1/featured-news.html">Featured News</a></li>
+ 
+
+</ul>
+
+
+
+ 
+
+
+
+<li class=" "><a class=" dropdown-toggle" href="/biomass-sizing-mis-3004.html">Biomass</a>
+         
+
+
+ 
+
+
+
+<li class=" "><a class=" dropdown-toggle" href="/heat-pump-mis-3005.html">Heat Pump</a>
+         
+
+
+ 
+
+
+
+<li class=" "><a class=" dropdown-toggle" href="/photovoltaic-fit-calculation.html">Solar PV</a>
+         
+
+
+ 
+
+
+
+<li class=" "><a class=" dropdown-toggle" href="/solar-thermal-mis-3001.html">Solar Thermal</a>
+         
+
+
+ 
+
+
+
+<li class="deeper dropdown parent "><a class=" dropdown-toggle" href="/green-deal-basics.html">Green Deal<b class="caret"></b></a>
+<ul class="dropdown-menu">
+
+ 1
+ 
+        <li class=""><a href="/green-deal-basics/green-deal-compliance.html">Green Deal Compliance</a></li>
+ 
+        <li class=""><a href="/green-deal-basics/how-it-works.html">How it Works</a></li>
+ 
+        <li class=""><a href="/green-deal-basics/method-statements.html">Method Statements</a></li>
+ 
+        <li class=""><a href="/green-deal-basics/insulation-case-study.html">Insulation Case Study</a></li>
+ 
+
+</ul>
+
+
+
+ 
+
+
+
+<li class="deeper dropdown parent "><a class=" dropdown-toggle" href="/2014-04-24-08-58-12/calculations-and-qms.html">MCS<b class="caret"></b></a>
+<ul class="dropdown-menu">
+
+ 1
+ 
+        <li class=""><a href="/2014-04-24-08-58-12/qms-company-records.html">QMS Company Records</a></li>
+ 
+        <li class=""><a href="/2014-04-24-08-58-12/qms-jobs.html">QMS Jobs</a></li>
+ 
+        <li class=""><a href="/2014-04-24-08-58-12/demonstration.html">Demonstration</a></li>
+ 
+        <li class=""><a href="/2014-04-24-08-58-12/how-to-order.html">How to Order</a></li>
+ 
+        <li class=""><a href="/2014-04-24-08-58-12/calculations-and-qms.html">Calculations and QMS</a></li>
+ 
+        <li class=""><a href="/2014-04-24-08-58-12/example-wind-load-calculation.html">QMS Manual</a></li>
+ 
+        <li class=""><a href="/2014-04-24-08-58-12/qms-customers.html">QMS Customers</a></li>
+ 
+        <li class=""><a href="/2014-04-24-08-58-12/quotations-invoices.html">Quotations &amp; Invoices</a></li>
+ 
+
+</ul>
+
+
+
+ 
+
+
+
+<li class="deeper dropdown parent current active"><a class=" dropdown-toggle" href="/support-mainmenu-43/support-home.html">Support<b class="caret"></b></a>
+<ul class="dropdown-menu">
+
+ 1
+ 
+        <li class=""><a href="/support-mainmenu-43/support-home.html">Support Home</a></li>
+ 
+        <li class=""><a href="/support-mainmenu-43/archive.html">Archive</a></li>
+ 
+        <li class=""><a href="/support-mainmenu-43/blog.html">Blog</a></li>
+ 
+
+</ul>
+
+
+
+ 
+       
+</ul>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="wrapper-content">
+        <div class="container">
+
+            <div id="main-content" class="row-fluid">
+
+
+                <section class="span9" id="main">
+
+                    <div id="breadcrumbs">
+                        
+
+<ul class="breadcrumb">
+    <li class="active"><span class="divider icon-map-marker"></span></li>
+
+    
+
+     
+
+    <li><a href="/index.html" class="pathway">Home</a><span class="divider"><i class="icon-caret-right"></i></span></li>
+
+    
+
+    
+
+     
+
+    <li><a href="/support-mainmenu-43/support-home.html" class="pathway">Support</a><span class="divider"><i class="icon-caret-right"></i></span></li>
+
+    
+
+    
+
+     
+
+    <li><a href="/support-mainmenu-43/blog.html" class="pathway">Blog</a><span class="divider"><i class="icon-caret-right"></i></span></li>
+
+    
+
+    
+
+     
+
+    <li class="active"><span>Sap 3.4 MCS Microgeneration</span></li>
+    
+
+    
+</ul>
+
+
+                    </div>
+
+                    <div id="system-message-container">
+                    </div>
+
+
+
+                    
+
+                    <div class="item-page" itemscope itemtype="http://schema.org/Article">
+                        <!-- Schema.org markup -->
+                        <meta itemprop="name" content="&lt;!--#4DHTML article_o.title--&gt; : Undefined" />
+                        <meta itemprop="headline" content="Solar PV Calculation" />
+                        <meta itemprop="inLanguage" content="en-GB" />
+                        <meta itemprop="genre" content="MCS Sap Calculator" />
+                        <meta itemprop="genre" content="Products" />
+                        <meta itemprop="dateCreated" content="2007-05-10T16:45:51+00:00" />
+                        <meta itemprop="dateModified" content="2013-11-28T15:39:17+00:00" />
+                        <meta itemprop="datePublished" content="2007-05-10T16:45:38+00:00" />
+                        <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                            <meta itemprop="name" content="Complete Picture SAP U-Value MCS Software" />
+                            <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                                <meta itemprop="url" content="https://www.completepicture.co.uk/images/logo.png">
+                            </div>
+                        </div>
+                        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <meta itemprop="name" content="" />
+                        </div>
+                      
+
+                        <div class="page-header">
+                            <h2>
+                                Sap 3.4 MCS Microgeneration
+                            </h2>
+
+
+                        </div>
+
+
+
+
+
+
+                        <div itemprop="articleBody">
+                            <p>Updated Microgeneration module and tutorials released 30/06/10.&nbsp; Creates site survey forms for on-site data capture. <a href="index.php?option=com_content&amp;view=article&amp;id=63:risk-assessments-and-toolbox-talks&amp;catid=21:quality-management-system">Free risk assessment</a> software bundle.</p>
+
+                            
+<p>This update includes the ability to preprint survey forms before visiting the site and if you order a copy of the software in July you will receive a complimentary copy of our <a href="index.php?option=com_content&amp;view=article&amp;id=66:risk-assessments-and-toolbox-talks4&amp;catid=3:newsflash">risk assessment software</a> worth £75.</p>
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <div class="module"></div>
+
+    <div class="wrapper-footer clearfix">
+        <footer id="footer" class="footer sticky">
+
+
+            <div class="footer-content">
+                <div class="container">
+
+
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="/templates/js_impacto/js/jquery.innerfade.js"></script>
+    <script type="text/javascript" src="/templates/js_impacto/js/impacto.js"></script>
+
+    <script src='/templates/js_impacto/wright/js/utils.min.js' type='text/javascript'></script>
+    <script src='/templates/js_impacto/wright/js/stickyfooter.min.js' type='text/javascript'></script>
+</body>
+
+</html>
