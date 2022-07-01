@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+<head>
+
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1990 12:00:00 GMT" />
+
+
+    <script type="text/javascript">
+        function setContent(newContent) {
+            newContent = newContent.replace(/\\r\\n/g, "\n");
+            tinyMCE.activeEditor.setContent(newContent);
+        }
+    </script>
+
+    <script type="text/javascript">
+        function getContent() {
+            var newContent = tinyMCE.activeEditor.getContent();
+            return newContent;
+        }
+    </script>
+
+
+
+    <script src="tinymce.min.js"></script>
+    <script>
+        
+        tinymce.init({
+            relative_urls: false,
+            base_url: "/tinymce",
+            document_base_url : "../",
+            selector: 'textarea',
+            width: '100%',
+            min_height:500,
+            resize: 'false',
+            plugins: 'print preview paste importcss searchreplace autolink save directionality visualblocks visualchars fullscreen image link media table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons codeeditor',
+            menubar: 'file edit view insert format tools table help',
+            toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media link anchor | codeeditor',
+            toolbar_sticky: true,
+            image_advtab: true,
+            paste_data_images: true,            
+            link_list: '/tinyurls',
+            link_class_list: [
+                 {title: 'None', value: ''}],
+            importcss_append: true,
+            image_caption: true,
+            image_list: '/tinyimages',
+            images_file_types: 'jpg,svg,webp,png,jpeg',
+            valid_elements: '*[*]',
+            extended_valid_elements: '*[*],figure[class],figcaption',
+            quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quicktable | image',
+            noneditable_noneditable_class: 'mceNonEditable',
+            toolbar_mode: 'sliding',
+            contextmenu: 'link linkchecker image table spellchecker',
+            content_css: '../templates/css/style.css',
+            theme: 'silver',
+            browser_spellcheck: true,
+            skin: 'oxide-dark'
+        });
+    </script>
+</head>
+
+
+<body>
+    <textarea  id="waContent">Your content here</textarea>
+</body>
+
+
+
+</html>
